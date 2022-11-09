@@ -77,7 +77,7 @@ app.get("/filemanager/list", (req, res) => {
 });
 
 app.post("/filemanager/dir/create", (req, res) => {
-  const fullPath = `${caminho}/${req.body.directory}`;
+  const fullPath = `${caminho}/${req.body.path}/${req.body.directory}`;
 
   if (fs.existsSync(fullPath)) {
     return apiError(res)("The folder already exist");
